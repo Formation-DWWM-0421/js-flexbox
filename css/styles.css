@@ -1,0 +1,51 @@
+.control-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.demo-container {
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    margin: 1px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.demo-container:after {
+    position: absolute;
+    content: '';
+    background-color: rgba(255, 255, 255, .25);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.demo-container:hover:after,
+.demo-container.selected:after {
+    opacity: 1;
+}
+
+.demo-container.expanded {
+    min-height: 12em;
+}
+
+.demo-container.padded {
+    padding: .5em 1em;
+}
+
+.demo-container.blue {
+    background-color: rgb(186, 220, 252);
+    border-color: blue;
+    color: blue;
+}
+
+.demo-container.green {
+    background-color: rgb(172, 250, 152);
+    border-color: green;
+    color: green;
+}
